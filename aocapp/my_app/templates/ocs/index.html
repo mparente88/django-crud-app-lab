@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/ocs/oc-index.css' %}" />
+{% endblock %} {% block content %}
+
+<section class="page-header">
+  <h1>OC List</h1>
+  <!-- Insert Images Here -->
+</section>
+
+<section class="card-container">
+  {% for oc in ocs %}
+  <div class="card">
+    <div class="card-content">
+      <div class="card-img-container">
+        <img src="" alt="Placeholder" />
+      </div>
+      <h2 class="card-title">{{ oc.name }}</h2>
+      <p>{{ oc.age }} years old</p>
+      <p>Likes: {{ oc.likes }}</p>
+      <p>Dislikes: {{ oc.dislikes }}</p>
+      <p><small>{{ oc.description }}</small></p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
